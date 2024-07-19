@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- Font Awesome -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
+            rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="main-content bottom-space">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <div class="card course-card">
+                    <div style="display: none" class="course-avatar-block-top">
+                        <div class="course-avatar-block">
+
+                            <img class="img-large"
+                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA5t7AKXFuuuAADVWiae-4M6nGcj5SNIAPkg&s"
+                                 alt="logo">
+                            <p class="text-large">TechOrda Graduate</p>
+                        </div>
+<!--                        <div class="fav-btns favoriteEvent " data-id="491">-->
+<!--                                <span class="liked-icon">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"-->
+<!--                                         fill="none">-->
+<!--  <path d="M9.59967 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8334 4.94063 17.8334 7.24183C17.8334 8.17912 17.6839 9.04391 17.4243 9.84625L17.4233 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2963 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84827 16.9168 9.72127 16.8956 9.64976 16.8703L9.64978 16.8703L9.64441 16.8685C8.70378 16.5484 7.24252 15.7878 5.85821 14.598C4.4761 13.4102 3.19932 11.8195 2.57678 9.84951L2.57679 9.8495L2.57574 9.84625C2.31616 9.04391 2.16669 8.17912 2.16669 7.24183C2.16669 4.94063 4.02016 3.0835 6.30002 3.0835C7.64345 3.0835 8.84793 3.73656 9.59967 4.74135Z"-->
+<!--        fill="#FF2B54" stroke="white"></path>-->
+<!--</svg>-->
+<!--                                </span>-->
+<!--                            <span class="unliked-icon">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"-->
+<!--                                         fill="none">-->
+<!--  <path d="M9.59965 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8333 4.94063 17.8333 7.24183C17.8333 8.17912 17.6839 9.04391 17.4243 9.84625L17.4232 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2962 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84825 16.9168 9.72126 16.8956 9.64975 16.8703L9.64976 16.8703L9.6444 16.8685C8.70377 16.5484 7.2425 15.7878 5.85819 14.598C4.47608 13.4102 3.1993 11.8195 2.57677 9.84951L2.57678 9.8495L2.57573 9.84625C2.31615 9.04391 2.16667 8.17912 2.16667 7.24183C2.16667 4.94063 4.02015 3.0835 6.30001 3.0835C7.64343 3.0835 8.84792 3.73656 9.59965 4.74135Z"-->
+<!--        fill="#727272" fill-opacity="0.2" stroke="white"></path>-->
+<!--</svg>-->
+<!--                                </span>-->
+<!--                        </div>-->
+                    </div>
+                    <h1 id="talent-resume-title">Android Developer</h1>
+                    <span class="text-14"></span>
+                    <span id="resume-age" class="text-20">Expected salary:  200.000 ₸</span>
+                    <div class="course-bottom">
+                        <a class="btn" href="/en/techorda/course_application/491/create/">Contact</a>
+                        <div>
+                            <span class="text-xs">Show contacts</span>
+                            <!--                            <svg class="hint" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.9998 22.0005C17.5226 22.0005 21.9998 17.5233 21.9998 12.0005C21.9998 6.47764 17.5226 2.00049 11.9998 2.00049C6.47691 2.00049 1.99976 6.47764 1.99976 12.0005C1.99976 17.5233 6.47691 22.0005 11.9998 22.0005Z" fill="#F9F9F9"/>
+<path d="M11.9132 13.471V13.1784C11.9132 12.2308 12.4985 11.7291 13.0837 11.325C13.6551 10.9348 14.2263 10.4332 14.2263 9.51347C14.2263 8.23144 13.1952 7.2002 11.9132 7.2002C10.6311 7.2002 9.59998 8.23144 9.59998 9.51347M11.9071 16.801H11.9197" stroke="#727272" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <div class="card course-card" style="gap:24px">
+
+                    <div class="d-flex" style="gap:8px">
+                        <p class="text-20">About talent</p>
+                        <a id="talent-link" class="link-btn" style="color: #21905B" href="#"
+                           target="_blank">
+                            Portfolio link
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                 fill="none">
+                                <path d="M8.66675 7.33337L14.1334 1.8667" stroke="#21905B" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M14.6666 4.5335V1.3335H11.4666" stroke="#21905B" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7.33325 1.3335H5.99992C2.66659 1.3335 1.33325 2.66683 1.33325 6.00016V10.0002C1.33325 13.3335 2.66659 14.6668 5.99992 14.6668H9.99992C13.3333 14.6668 14.6666 13.3335 14.6666 10.0002V8.66683"
+                                      stroke="#21905B" stroke-width="1.5" stroke-linecap="round"
+                                      stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p>Hello! I am an enthusiastic and dedicated Android Developer with a passion for creating
+                        innovative and user-friendly mobile applications. With 2 years of experience in developing
+                        high-quality Android apps, I possess a deep understanding of the Android SDK, Java, Kotlin, and
+                        other essential technologies. My journey in the tech world has been driven by a relentless
+                        desire to solve problems and improve user experiences through elegant and efficient code.</p>
+
+
+                    <div class="text-20">
+                        <p>Notable achievements</p>
+                    </div>
+                    <ul style="">
+                        <li>Developing ZenApp, which has 1000 downloads and 702 positive reviews on the Google Play
+                            Store.
+                        </li>
+                        <li>Implementing map navigation features that enhanced user engagement by 75%.</li>
+                        <li>Streamlining app performance and reducing load times by 60% through efficient code
+                            optimization.
+                        </li>
+                    </ul>
+
+                    <div class="text-20">Candidate details</div>
+
+                    <div class="row course-content">
+                        <div class="col-md-6 col-xs-12">
+                            <p>Name</p>
+                            <span id="talent-name">John Doe</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Experience</p>
+                            <span id="talent-exp">2 years</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Education</p>
+                            <span id="talent-edu">Bachelor's in Computer Science</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Skills</p>
+
+                            <span id="talent-skill">Java, Kotlin, Android SDK, REST APIs</span>
+
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Certifications</p>
+                            <span id="talent-cert">Google Associate Android Developer</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Languages</p>
+                            <span id="talent-lang">English, Russian</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Current Position</p>
+                            <span id="talent-position">Senior Android Developer at XYZ Corp</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Projects</p>
+                            <span id="talent-proj">Project A, Project B, Project C</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p>Preferred Work Style</p>
+                            <span id="talent-format">Remote/On-site</span>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12">
+                            <p>Availability</p>
+                            <span id="talent-availability">Immediate</span>
+                        </div>
+
+                        <!--                        <div class="col-md-12 col-xs-12">-->
+                        <!--                            <p>Classes format</p>-->
+                        <!--                            <span>Online lessons 2 times a week for 2 hours</span>-->
+                        <!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        <div class="card">-->
+        <!--            <h1 class="text-20">Skills</h1>-->
+        <!--            <br>-->
+        <!--            <div class="row">-->
+
+        <!--                <div class="col-md-12 col-xs-12 col-sm-12">-->
+        <!--                    <div class="qualif-block">-->
+        <!--                        <div>-->
+        <!--                            <img src="/static/img/tick.svg" alt="" style="margin-top: 3px">-->
+        <!--                            <p class="text-14">How to collect and process data, visualize and interpret it.</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="col-md-12 col-xs-12 col-sm-12">-->
+        <!--                    <div class="qualif-block">-->
+        <!--                        <div>-->
+        <!--                            <img src="/static/img/tick.svg" alt="" style="margin-top: 3px">-->
+        <!--                            <p class="text-14">How to generate metrics and metrics and work with them. </p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="col-md-12 col-xs-12 col-sm-12">-->
+        <!--                    <div class="qualif-block">-->
+        <!--                        <div>-->
+        <!--                            <img src="/static/img/tick.svg" alt="" style="margin-top: 3px">-->
+        <!--                            <p class="text-14">How to turn information into understandable reports.</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="col-md-12 col-xs-12 col-sm-12">-->
+        <!--                    <div class="qualif-block">-->
+        <!--                        <div>-->
+        <!--                            <img src="/static/img/tick.svg" alt="" style="margin-top: 3px">-->
+        <!--                            <p class="text-14">How to help businesses make better decisions.</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="col-md-12 col-xs-12 col-sm-12">-->
+        <!--                    <div class="qualif-block">-->
+        <!--                        <div>-->
+        <!--                            <img src="/static/img/tick.svg" alt="" style="margin-top: 3px">-->
+        <!--                            <p class="text-14">How to automate reporting using the Power BI Gateway.</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="col-md-12 col-xs-12 col-sm-12">-->
+        <!--                    <div class="qualif-block">-->
+        <!--                        <div>-->
+        <!--                            <img src="/static/img/tick.svg" alt="" style="margin-top: 3px">-->
+        <!--                            <p class="text-14">Advance in SQL and Python skills.</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-md-12 col-xs-12 col-sm-12">-->
+        <!--                <div class="card questions-block">-->
+        <!--                    <h1 class="text-20">FAQ</h1>-->
+        <!--                    <ul>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">What is the Tech Orda program?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>Tech Orda is a human capital development program in the field of IT. The program-->
+        <!--                                        provides subsidized tunding for the training of IT specialists in private-->
+        <!--                                        schools of the Republic of Kazakhstan.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">Where will the selection of candidates for-->
+        <!--                                    training take place?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>Acceptance and processing of applications will take place at the showcase of IT-->
+        <!--                                        schools at astanahub.com portal.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">What are the requirements for candidates?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>The basic requirements for candidates include citizenship of the Republic of-->
+        <!--                                        Kazakhstan and the age limit from 18 to 45 years. Additional requirements depend-->
+        <!--                                        on the IT-school / IT-company and the course you choose. It is mandatory to read-->
+        <!--                                        all the conditions before applying for training.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">How much does the training cost?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>The amount of financing is 600 000 tenge per person. If the tuition costs up to-->
+        <!--                                        600,000 tenge, the tuition fee is fully covered by the Program. If the cost-->
+        <!--                                        exceeds 600,000 tenge, the remainder of the cost needs to be covered by the-->
+        <!--                                        student himself.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">How long does the quota training under the-->
+        <!--                                    Tech Orda program last?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>The training will take place from 6 months or more, depending on the Course and-->
+        <!--                                        the IT-school you plan to enroll in.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">How many IT schools participate in the-->
+        <!--                                    program?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>The list of all IT schools is available on the showcase of IT schools at-->
+        <!--                                        astanahub.com portal.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">How many applications can I submit?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>Candidates can only apply for 5 (five) Participants of the Program.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">How many scholarships/quotas can a candidate-->
+        <!--                                    receive under the Program?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>The candidate can only study 1 (one) once within the framework of the Program.-->
+        <!--                                        There is one exception: A student can get training in 2 (two) Courses during the-->
+        <!--                                        duration of the Program, only provided that one takes Courses that are pre- and-->
+        <!--                                        post-prerequisites to each other from the same Participant of the Program (IT-->
+        <!--                                        school/IT company). For example, if you first study for a Junior Web Developer-->
+        <!--                                        at School X in 2023 and then apply for a Middle Web Developer at the same school-->
+        <!--                                        X in 2024.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">Can a student who has completed a quota-->
+        <!--                                    training under the Program in 2023 apply again?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>A student can get training in 2 (two) Courses during the duration of the Program,-->
+        <!--                                        only provided that one takes Courses that are pre- and post-prerequisites to-->
+        <!--                                        each other from the same Participant of the Program (IT school/IT company).</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">If I studied with a Program Participant in-->
+        <!--                                    2023 (IT schools/IT companies), but was on the waiting list, can I apply now?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>Yes, you can. However, we recommend that you contact the Program Participant-->
+        <!--                                        (where you have completed education) to confirm your status on the waiting list-->
+        <!--                                        within the Program.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">Is there an opportunity for a student to-->
+        <!--                                    transfer from one IT school to another, which is also a Participant of the Tech Orda-->
+        <!--                                    program?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>As soon as the candidate confirms his choice to apply for a grant at a certain-->
+        <!--                                        IT-school, there is no possibility to transfer to another school. Therefore, we-->
+        <!--                                        strongly recommend that you consider all available options before making a-->
+        <!--                                        decision on accepting/rejecting a grant within the framework of the Program.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">Should Candidates who have received a quota-->
+        <!--                                    work out after training?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>No, such counter obligations are not provided for by Astana Hub. Other conditions-->
+        <!--                                        may be regulated in the contract between the IT-school and the student.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550"> Can I opt out of studying during the-->
+        <!--                                    learning process? Is there a penalty if I don't complete the training?</p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>The conditions depend on the specific IT school/IT company you choose. In the-->
+        <!--                                        school card on the showcaseof IT-schools at astanahub.com portal, there is a-->
+        <!--                                        special 'Special conditions' section where this information can be indicated.-->
+        <!--                                        Also, we recommend that you contact the IT school directly and find out about-->
+        <!--                                        all the terms of the contract.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                        <li>-->
+        <!--                            <a class="toggle-menu d-flex">-->
+        <!--                                <p class="text-14" style="font-weight:550">Can I study at the same time in an IT-company-->
+        <!--                                    (EPAM) and an IT-school as part of the Program? </p>-->
+        <!--                                <div class="toogle-arrow">-->
+        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"-->
+        <!--                                         fill="none">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                        <path d="M12 18V6" stroke="#171717" stroke-width="1.25" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+        <!--                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+        <!--                                         xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                        <path d="M6 12H18" stroke="#171717" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                              stroke-linejoin="round"></path>-->
+        <!--                                    </svg>-->
+
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <ul class="toggle-list">-->
+        <!--                                <li class="text-14">-->
+        <!--                                    <p>No, within the framework of the Program, you can study at only one IT-school or-->
+        <!--                                        IT-company.</p>-->
+        <!--                                </li>-->
+        <!--                            </ul>-->
+        <!--                        </li>-->
+
+        <!--                    </ul>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        <p>Similar courses</p>-->
+        <!--        <div class="row" style="margin-bottom: 24px">-->
+
+        <!--            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4 col-flex load-item">-->
+        <!--                <a class="card-course" href="/en/techorda/course/470/">-->
+
+        <!--                    <div class="course__inner course__inner_top"-->
+        <!--                         style="background-image: url('https://astanahub.com/media/photo1720067770_1_KkMaVFb.jpeg')">-->
+        <!--                        <div class="d-flex">-->
+        <!--                            <div class="course-avatar-block">-->
+
+        <!--                                <img src="https://astanahub.com/media/ADVANCE_ACADEMY_LOGO_512x512.37c751438b12.png"-->
+        <!--                                     alt="logo">-->
+        <!--                                <p>Advance Academy</p>-->
+        <!--                            </div>-->
+        <!--                            <div class="fav-btns favoriteEvent " data-id="470">-->
+        <!--                    <span class="liked-icon">-->
+        <!--                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">-->
+        <!--  <path d="M9.59967 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8334 4.94063 17.8334 7.24183C17.8334 8.17912 17.6839 9.04391 17.4243 9.84625L17.4233 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2963 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84827 16.9168 9.72127 16.8956 9.64976 16.8703L9.64978 16.8703L9.64441 16.8685C8.70378 16.5484 7.24252 15.7878 5.85821 14.598C4.4761 13.4102 3.19932 11.8195 2.57678 9.84951L2.57679 9.8495L2.57574 9.84625C2.31616 9.04391 2.16669 8.17912 2.16669 7.24183C2.16669 4.94063 4.02016 3.0835 6.30002 3.0835C7.64345 3.0835 8.84793 3.73656 9.59967 4.74135Z"-->
+        <!--        fill="#FF2B54" stroke="white"></path>-->
+        <!--</svg>-->
+        <!--                    </span>-->
+        <!--                                <span class="unliked-icon">-->
+        <!--                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">-->
+        <!--  <path d="M9.59965 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8333 4.94063 17.8333 7.24183C17.8333 8.17912 17.6839 9.04391 17.4243 9.84625L17.4232 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2962 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84825 16.9168 9.72126 16.8956 9.64975 16.8703L9.64976 16.8703L9.6444 16.8685C8.70377 16.5484 7.2425 15.7878 5.85819 14.598C4.47608 13.4102 3.1993 11.8195 2.57677 9.84951L2.57678 9.8495L2.57573 9.84625C2.31615 9.04391 2.16667 8.17912 2.16667 7.24183C2.16667 4.94063 4.02015 3.0835 6.30001 3.0835C7.64343 3.0835 8.84792 3.73656 9.59965 4.74135Z"-->
+        <!--        fill="#727272" fill-opacity="0.2" stroke="white"></path>-->
+        <!--</svg>-->
+        <!--                    </span>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                    <div class="course__inner course__inner_bottom">-->
+        <!--                        <div class="course-details">-->
+        <!--                            <div class="course_details_top">-->
+        <!--                                <p class="text-16" style="word-wrap: break-word;">Data analytics from scratch-->
+        <!--                                    (SQL/PowerBI/Python)</p>-->
+        <!--                                <span class="text-xs">-->
+        <!--                        For beginner-->
+        <!--                        • 26 Weeks <br>-->
+        <!--                        • Available quotas : 8-->
+        <!--                    </span>-->
+        <!--                            </div>-->
+        <!--                            <div class="course_details_bottom">-->
+        <!--                                <p class="text-14" style="margin-right:4px ">600 000-->
+        <!--                                    ₸</p>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </a>-->
+        <!--            </div>-->
+
+        <!--            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4 col-flex load-item">-->
+        <!--                <a class="card-course" href="/en/techorda/course/456/">-->
+
+        <!--                    <div class="course__inner course__inner_top"-->
+        <!--                         style="background-image: url('https://astanahub.com/media/photo1720067770_2.jpeg')">-->
+        <!--                        <div class="d-flex">-->
+        <!--                            <div class="course-avatar-block">-->
+
+        <!--                                <img src="https://astanahub.com/media/ProITivity_Logo_green.9ddd1946f3df_EBG2og2.png"-->
+        <!--                                     alt="logo">-->
+        <!--                                <p>ProITivity</p>-->
+        <!--                            </div>-->
+        <!--                            <div class="fav-btns favoriteEvent " data-id="456">-->
+        <!--                    <span class="liked-icon">-->
+        <!--                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">-->
+        <!--  <path d="M9.59967 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8334 4.94063 17.8334 7.24183C17.8334 8.17912 17.6839 9.04391 17.4243 9.84625L17.4233 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2963 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84827 16.9168 9.72127 16.8956 9.64976 16.8703L9.64978 16.8703L9.64441 16.8685C8.70378 16.5484 7.24252 15.7878 5.85821 14.598C4.4761 13.4102 3.19932 11.8195 2.57678 9.84951L2.57679 9.8495L2.57574 9.84625C2.31616 9.04391 2.16669 8.17912 2.16669 7.24183C2.16669 4.94063 4.02016 3.0835 6.30002 3.0835C7.64345 3.0835 8.84793 3.73656 9.59967 4.74135Z"-->
+        <!--        fill="#FF2B54" stroke="white"></path>-->
+        <!--</svg>-->
+        <!--                    </span>-->
+        <!--                                <span class="unliked-icon">-->
+        <!--                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">-->
+        <!--  <path d="M9.59965 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8333 4.94063 17.8333 7.24183C17.8333 8.17912 17.6839 9.04391 17.4243 9.84625L17.4232 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2962 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84825 16.9168 9.72126 16.8956 9.64975 16.8703L9.64976 16.8703L9.6444 16.8685C8.70377 16.5484 7.2425 15.7878 5.85819 14.598C4.47608 13.4102 3.1993 11.8195 2.57677 9.84951L2.57678 9.8495L2.57573 9.84625C2.31615 9.04391 2.16667 8.17912 2.16667 7.24183C2.16667 4.94063 4.02015 3.0835 6.30001 3.0835C7.64343 3.0835 8.84792 3.73656 9.59965 4.74135Z"-->
+        <!--        fill="#727272" fill-opacity="0.2" stroke="white"></path>-->
+        <!--</svg>-->
+        <!--                    </span>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                    <div class="course__inner course__inner_bottom">-->
+        <!--                        <div class="course-details">-->
+        <!--                            <div class="course_details_top">-->
+        <!--                                <p class="text-16" style="word-wrap: break-word;">Data Analysis</p>-->
+        <!--                                <span class="text-xs">-->
+        <!--                        For beginner-->
+        <!--                        • 26 Weeks <br>-->
+        <!--                        • Available quotas : 8-->
+        <!--                    </span>-->
+        <!--                            </div>-->
+        <!--                            <div class="course_details_bottom">-->
+        <!--                                <p class="text-14" style="margin-right:4px ">750 000-->
+        <!--                                    ₸</p>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </a>-->
+        <!--            </div>-->
+
+        <!--            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4 col-flex load-item">-->
+        <!--                <a class="card-course" href="/en/techorda/course/433/">-->
+
+        <!--                    <div class="course__inner course__inner_top"-->
+        <!--                         style="background-image: url('https://astanahub.com/media/photo1720067770_5.jpeg')">-->
+        <!--                        <div class="d-flex">-->
+        <!--                            <div class="course-avatar-block">-->
+
+        <!--                                <img src="https://astanahub.com/media/Datagroup_logo.c4f847546223.png" alt="logo">-->
+        <!--                                <p>DataGroup</p>-->
+        <!--                            </div>-->
+        <!--                            <div class="fav-btns favoriteEvent " data-id="433">-->
+        <!--                    <span class="liked-icon">-->
+        <!--                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">-->
+        <!--  <path d="M9.59967 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8334 4.94063 17.8334 7.24183C17.8334 8.17912 17.6839 9.04391 17.4243 9.84625L17.4233 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2963 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84827 16.9168 9.72127 16.8956 9.64976 16.8703L9.64978 16.8703L9.64441 16.8685C8.70378 16.5484 7.24252 15.7878 5.85821 14.598C4.4761 13.4102 3.19932 11.8195 2.57678 9.84951L2.57679 9.8495L2.57574 9.84625C2.31616 9.04391 2.16669 8.17912 2.16669 7.24183C2.16669 4.94063 4.02016 3.0835 6.30002 3.0835C7.64345 3.0835 8.84793 3.73656 9.59967 4.74135Z"-->
+        <!--        fill="#FF2B54" stroke="white"></path>-->
+        <!--</svg>-->
+        <!--                    </span>-->
+        <!--                                <span class="unliked-icon">-->
+        <!--                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">-->
+        <!--  <path d="M9.59965 4.74135L10 5.27648L10.4004 4.74135C11.1521 3.73656 12.3566 3.0835 13.7 3.0835C15.9799 3.0835 17.8333 4.94063 17.8333 7.24183C17.8333 8.17912 17.6839 9.04391 17.4243 9.84625L17.4232 9.84951C16.8007 11.8195 15.5239 13.4102 14.1418 14.598C12.7575 15.7878 11.2962 16.5484 10.3556 16.8685L10.3556 16.8684L10.3503 16.8703C10.2788 16.8956 10.1518 16.9168 10 16.9168C9.84825 16.9168 9.72126 16.8956 9.64975 16.8703L9.64976 16.8703L9.6444 16.8685C8.70377 16.5484 7.2425 15.7878 5.85819 14.598C4.47608 13.4102 3.1993 11.8195 2.57677 9.84951L2.57678 9.8495L2.57573 9.84625C2.31615 9.04391 2.16667 8.17912 2.16667 7.24183C2.16667 4.94063 4.02015 3.0835 6.30001 3.0835C7.64343 3.0835 8.84792 3.73656 9.59965 4.74135Z"-->
+        <!--        fill="#727272" fill-opacity="0.2" stroke="white"></path>-->
+        <!--</svg>-->
+        <!--                    </span>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                    <div class="course__inner course__inner_bottom">-->
+        <!--                        <div class="course-details">-->
+        <!--                            <div class="course_details_top">-->
+        <!--                                <p class="text-16" style="word-wrap: break-word;">Data Mastery: Microsoft Power BI, SQL-->
+        <!--                                    and Python</p>-->
+        <!--                                <span class="text-xs">-->
+        <!--                        For beginner-->
+        <!--                        • 26 Weeks <br>-->
+        <!--                        • Available quotas : 33-->
+        <!--                    </span>-->
+        <!--                            </div>-->
+        <!--                            <div class="course_details_bottom">-->
+        <!--                                <p class="text-14" style="margin-right:4px ">600 000-->
+        <!--                                    ₸</p>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </a>-->
+        <!--            </div>-->
+
+        <!--        </div>-->
+
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- for templates -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+
+<!-- MDB -->
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"
+></script>
+
+<script src="js/resume_script.js"></script>
+</body>
+</html>

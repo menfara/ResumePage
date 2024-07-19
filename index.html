@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumes</title>
+
+    <!-- Font Awesome -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
+            rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="techorda-block-inner">
+    <div class="left container resumes">
+        <div>
+
+            <input class="search" name="q" value="" type="text" placeholder="Search talents ..." autocomplete="off">
+        </div>
+
+                <div class="filters">
+
+                    <label class="  visually-hidden" for="direction-filter">Filter by Tech Orda Direction:</label>
+                    <select data-mdb-select-init class="form-select w-auto" id="direction-filter">
+                        <option value="">All Directions</option>
+                        <!-- Вставим направления сюда динамически через jQuery -->
+                    </select>
+
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="tech-orda-graduates-filter"/>
+                        <label class="form-check-label" for="tech-orda-graduates-filter">TechOrda graduates</label>
+                    </div>
+                </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" id="resumes-list">
+            <!-- Здесь будет список резюме -->
+
+
+        </div>
+    </div>
+
+    <div class="right">
+
+        <div class="techorda-filter">
+            <div class="filter-title">
+                <h1>Activity field</h1>
+            </div>
+
+
+            <form action="/en/techorda/course/" id="filterForm" class="" method="GET">
+                <div class="moda-inner-scroll">
+                    <div class="filter-list">
+
+                        <label class="course-avatar-block   active ">
+                            All
+                            <input type="radio" class="reloadSelect" value="any" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            UX/UI design
+                            <input type="radio" class="reloadSelect" value="UX/UI design" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Product management
+                            <input type="radio" class="reloadSelect" value="Product management" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Gamedev
+                            <input type="radio" class="reloadSelect" value="Gamedev" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Data Science
+                            <input type="radio" class="reloadSelect" value="Data Science" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Data Analysis
+                            <input type="radio" class="reloadSelect" value="Data Analysis" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Engineering
+                            <input type="radio" class="reloadSelect" value="Engineering" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Programming
+                            <input type="radio" class="reloadSelect" value="Programming" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Mobile Programming
+                            <input type="radio" class="reloadSelect" value="Mobile Programming" name="activity_field">
+                        </label>
+
+                        <label class="course-avatar-block   ">
+                            Cybersecurity
+                            <input type="radio" class="reloadSelect" value="Cybersecurity" name="activity_field">
+                        </label>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="label-radio">
+                                <div class="filter-title">
+                                    <h1>level</h1>
+                                </div>
+                                <div class="label-radio-inline label-radio-inline__min">
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="any" name="level" checked="">
+                                        <span>Any</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="all" name="level">
+                                        <span>For all</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="beginner" name="level">
+                                        <span>For beginner</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="advanced_training" name="level">
+                                        <span>For advanced</span>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="label-radio">
+                                <div class="filter-title">
+                                    <h1>Study format</h1>
+                                </div>
+                                <div class="label-radio-inline label-radio-inline__min">
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="any" name="study_format"
+                                               checked="">
+                                        <span>Any</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="online" name="study_format">
+                                        <span>Online</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="offline" name="study_format">
+                                        <span>Offline</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="hybrid" name="study_format">
+                                        <span>Hybrid</span>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="label-radio">
+                                <div class="filter-title">
+                                    <h1>Education language</h1>
+                                </div>
+                                <div class="label-radio-inline label-radio-inline__min">
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="kazakh" name="study_lang">
+                                        <span>Kazakh</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="russian" name="study_lang">
+                                        <span>Russian</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" class="reloadSelect" value="english" name="study_lang">
+                                        <span>English</span>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="label-radio">
+                                <div class="filter-title">
+                                    <h1>Area</h1>
+                                </div>
+                                <div class="label-radio-inline label-radio-inline__min regions-select"
+                                     style="max-height:130px">
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="" name="area" checked="">
+                                        <span>All</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Akmola region" name="area">
+                                        <span>Akmola region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Aktobe region" name="area">
+                                        <span>Aktobe region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Almaty region" name="area">
+                                        <span>Almaty region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Almaty" name="area">
+                                        <span>Almaty</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Astana" name="area">
+                                        <span>Astana</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Atyrau region" name="area">
+                                        <span>Atyrau region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="East Kazakhstan region"
+                                               name="area">
+                                        <span>East Kazakhstan region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Jambyl Region" name="area">
+                                        <span>Jambyl Region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Zhetysu Region" name="area">
+                                        <span>Zhetysu Region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="West-Kazakhstan region"
+                                               name="area">
+                                        <span>West-Kazakhstan region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Karaganda region" name="area">
+                                        <span>Karaganda region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Kostanay region" name="area">
+                                        <span>Kostanay region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Kyzylorda region" name="area">
+                                        <span>Kyzylorda region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Mangistau region" name="area">
+                                        <span>Mangistau region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Abay region" name="area">
+                                        <span>Abay region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Ulytau region" name="area">
+                                        <span>Ulytau region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Pavlodar region" name="area">
+                                        <span>Pavlodar region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="North Kazakhstan region"
+                                               name="area">
+                                        <span>North Kazakhstan region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Turkestan region" name="area">
+                                        <span>Turkestan region</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="Shymkent" name="area">
+                                        <span>Shymkent</span>
+                                    </label>
+
+                                    <label>
+                                        <input class="reloadSelect" type="radio" value="other" name="area">
+                                        <span>other</span>
+                                    </label>
+
+                                </div>
+                                <a class="toggle-menu d-flex filter-arrow" style="justify-content: flex-start"
+                                   data-state="close">
+                                    <span>All areas</span>
+                                    <div class="toogle-arrow" style="margin-left: 20px">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.6 7.45825L11.1666 12.8916C10.525 13.5333 9.47496 13.5333 8.8333 12.8916L3.39996 7.45825"
+                                                  stroke="#505050" stroke-width="1.5" stroke-miterlimit="10"
+                                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+</div>
+<script id="resume-template" type="text/x-handlebars-template">
+    <div class="col">
+        <div onclick="location.href='/ResumePage/resume.html?id={{ id }}'" class="resume-card card h-100">
+            <div class="d-flex gap-2 justify-content-between" style="align-items: center;">
+                <h2 class="text-16 mb-0">{{ name }}</h2>
+                {{#if isTechOrdaGraduate}}
+                <!--                <p class="text-xs text-xs__bold mb-0">🎖️ Tech Orda Graduate</p>-->
+
+                <div class="techorda-graduate-chip">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA5t7AKXFuuuAADVWiae-4M6nGcj5SNIAPkg&s"
+                         alt="logo">
+                    <p class="text-xs text-xs__bold mb-0">TechOrda Graduate</p>
+                </div>
+
+                {{/if}}
+            </div>
+
+            <p class="text-xs">Age: {{ age }}</p>
+
+            <p class="text-14" style="margin-top: 10px;">Education: {{ education }}</p>
+            <p class="text-14">English Level: {{ englishLevel }}</p>
+            <p class="text-14">Tech Orda Direction: {{ techOrdaDirection }}</p>
+            <p class="text-14">Employment Status: {{ employmentStatus }}</p>
+        </div>
+    </div>
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- for templates -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+
+<!-- MDB -->
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"
+></script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
